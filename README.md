@@ -1,5 +1,5 @@
 # Cloud-Computing-and-Big-Data
-0. 在运行代码前需要下载java安装包和Hadoop安装包到tools文件夹下。
+0. 新建tools文件夹，在运行代码前需要下载JDk8安装包和Hadoop2.8.5安装包到tools文件夹下。
 1. 首先，运行下面这条指令构建能够运行Hadoop的配套环境的镜像：
 ```Bash
 docker build -t="centos-hadoop" .
@@ -11,7 +11,7 @@ bash start_container.sh
 ```
 3. 接着将程序和数据拷贝进hadoop集群的1号节点，这里我已经上传了编译打包好的Java程序，当然也可以自己从源代码再编译一次：
 ```Bash
-docker cp ./data/movie.txt hadoop-node1:/
+docker cp ./movie.txt hadoop-node1:/
 docker cp ./itemcf.jar hadoop-node1:/
 ```
 4. 进入hadoop集群的1号节点，并在HDFS中新建文件夹和上传输入数据：
