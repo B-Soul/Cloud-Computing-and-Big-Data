@@ -20,7 +20,6 @@ public class Step3 {
         @Override
         protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             String[] items = value.toString().split("[\t,]");
-            // items[0] 是用户id
             for (int i = 1; i < items.length; i++) {
                 String[] item = items[i].split(":");
                 int movieId = Integer.parseInt(item[0]);
